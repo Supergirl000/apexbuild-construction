@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import { Hero } from "@/components/Hero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
-import { CTASection } from "@/components/CTASection";
 import { Reveal } from "@/components/Reveal";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
-import { siteConfig } from "@/config/site";
 
 export default function Home() {
   const reasons = [
@@ -84,27 +82,6 @@ export default function Home() {
         </div>
       </section>
 
-      <CTASection
-        title="Have a construction project to discuss?"
-        description="Send the project details, site location, and timeline. ApexBuild will help you clarify the next step."
-      />
-
-      <section className="container-px mx-auto max-w-7xl pb-16">
-        <Reveal className="grid gap-6 border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-3">
-          <a className="flex gap-3" href={`tel:${siteConfig.phone}`}>
-            <Phone className="h-5 w-5 text-[var(--color-primary)]" />
-            <span><b className="block">Call us</b>{siteConfig.phone}</span>
-          </a>
-          <a className="flex gap-3" href={`mailto:${siteConfig.email}`}>
-            <Mail className="h-5 w-5 text-[var(--color-primary)]" />
-            <span><b className="block">Email</b>{siteConfig.email}</span>
-          </a>
-          <span className="flex gap-3">
-            <MapPin className="h-5 w-5 text-[var(--color-primary)]" />
-            <span><b className="block">Visit</b>{siteConfig.address}</span>
-          </span>
-        </Reveal>
-      </section>
     </main>
   );
 }
